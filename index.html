@@ -175,11 +175,9 @@
 <p>与谁诉愁肠越来越无助，千般娇媚眼前浮，我也想颓废，成为心中期待的自己<br>好像很孤单，一个人看那静止的时间，<br>漫长又短暂无趣又无味，多么难忘的滋味。</p>
 <p>我欲欲何为，竟成了无为，用时间苦水教我什么是人生<br>没明白却明白了很久，不懂得却懂得了很多<br>只是都给了文字没给现实，怎么感觉自己很无知，连简单的道理都不明白<br>是不是太失败，不敢想也不敢做，<br>还是想多了容易乱，容易不快了。</p>
 <p>上了眉头无人诉，平淡成了奢望的玩笑，没有追求成了碌碌无为<br>任岁月流逝光阴不复，我本该有所为却又无所为，难道就这样过完一生<br>我不甘心中还想挑战，偶尔又萌生了胆怯。<br>不知何时喜欢上了安稳，就想留在父母身边，现实一次又一次的告诉我你要有安稳的条件，不然就成了懒惰。</p>
-<p>谁都有上了眉头无人诉的时候，或许也是一种成长<br>人生失意时总比得意时多，生存下来就很不容易，何况还要生活<br>奔波来奔波去为了梦的也有，为了家的也有，总之你要为点什么，没有人愿意流浪<br>生活让人放下安稳踏向远方，没有家的远方舔了许多彷徨与无助。</p>
-<p>人人都想写快乐不想写忧伤，只是忧伤总是多于快乐<br>上了眉头无人诉也好，怨自己也罢，都是这一世的种种<br>活过了也想有点成就，羡慕了才会惭愧自己<br>该努力的时间总爱放弃，该放弃的时候又莫名坚持。</p>
-<p>越明白自己好像越糊涂，是心态错了还是方向错了<br>还未明白，努力坚持的原则对吗?难道错了!<br>还未明白，有时感觉自己很失败，想改变自己的缺点却没有多大变化<br>反省一下才觉得害怕，别人都在努力，自己还停在原地<br>父母说的话我都记得，也很想成为父母的骄傲，只是我不明白自己的心，也不知道下一步应该如何?</p>
-<p>现在好像明白了一些，心反而轻松了不少，人生可能就是一塌糊涂到焕然一新吧!<br>所有的百感交集无非成为昨日之伤，眼前还是要珍惜与改变，所有的忧虑无非是不相信自己，眼下同样要相信自己。</p>
-
+        
+          <a class="article-more-a" href="/2018/04/01/hello-world/#more">more >></a>
+        
       
 
       
@@ -236,31 +234,36 @@
 
 
   
-    <article id="post-learnlinux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-sparksql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/20/learnlinux/">收集来的Linux常见命令大全</a>
+      <a class="article-title" href="/2017/09/23/sparksql/">云计算之SparkSQL</a>
     </h1>
   
 
         
-        <a href="/2016/10/20/learnlinux/" class="archive-article-date">
-  	<time datetime="2016-10-20T04:25:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-20</time>
+        <a href="/2017/09/23/sparksql/" class="archive-article-date">
+  	<time datetime="2017-09-23T06:52:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="系统相关"><a href="#系统相关" class="headerlink" title="系统相关"></a>系统相关</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">arch 显示机器的处理器架构(1) </span><br><span class="line">uname -m 显示机器的处理器架构(2) </span><br><span class="line">uname -r 显示正在使用的内核版本 </span><br><span class="line">dmidecode -q 显示硬件系统部件 - (SMBIOS / DMI) </span><br><span class="line">hdparm -i /dev/hda 罗列一个磁盘的架构特性 </span><br><span class="line">hdparm -tT /dev/sda 在磁盘上执行测试性读取操作 </span><br><span class="line">cat /proc/cpuinfo 显示CPU info的信息 </span><br><span class="line">cat /proc/interrupts 显示中断 </span><br><span class="line">cat /proc/meminfo 校验内存使用 </span><br><span class="line">cat /proc/swaps 显示哪些swap被使用 </span><br><span class="line">cat /proc/version 显示内核的版本 </span><br><span class="line">cat /proc/net/dev 显示网络适配器及统计 </span><br><span class="line">cat /proc/mounts 显示已加载的文件系统 </span><br><span class="line">lspci -tv 罗列 PCI 设备 </span><br><span class="line">lsusb -tv 显示 USB 设备 </span><br><span class="line">date 显示系统日期 </span><br><span class="line">cal 2007 显示2007年的日历表 </span><br><span class="line">date 041217002007.00 设置日期和时间 - 月日时分年.秒 </span><br><span class="line">clock -w 将时间修改保存到 BIOS</span><br></pre></td></tr></table></figure>
-<h3 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">shutdown -h now 关闭系统(1) </span><br><span class="line">init 0 关闭系统(2) </span><br><span class="line">telinit 0 关闭系统(3) </span><br><span class="line">shutdown -h hours:minutes &amp; 按预定时间关闭系统 </span><br><span class="line">shutdown -c 取消按预定时间关闭系统 </span><br><span class="line">shutdown -r now 重启(1) </span><br><span class="line">reboot 重启(2) </span><br><span class="line"><span class="built_in">logout</span> 注销</span><br></pre></td></tr></table></figure>
-<h3 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home 进入 <span class="string">'/ home'</span> 目录<span class="string">' </span></span><br><span class="line"><span class="string">cd .. 返回上一级目录 </span></span><br><span class="line"><span class="string">cd ../.. 返回上两级目录 </span></span><br><span class="line"><span class="string">cd 进入个人的主目录 </span></span><br><span class="line"><span class="string">cd ~user1 进入个人的主目录 </span></span><br><span class="line"><span class="string">cd - 返回上次所在的目录 </span></span><br><span class="line"><span class="string">pwd 显示工作路径 </span></span><br><span class="line"><span class="string">ls 查看目录中的文件 </span></span><br><span class="line"><span class="string">ls -F 查看目录中的文件 </span></span><br><span class="line"><span class="string">ls -l 显示文件和目录的详细资料 </span></span><br><span class="line"><span class="string">ls -a 显示隐藏文件 </span></span><br><span class="line"><span class="string">ls *[0-9]* 显示包含数字的文件名和目录名 </span></span><br><span class="line"><span class="string">tree 显示文件和目录由根目录开始的树形结构(1) </span></span><br><span class="line"><span class="string">lstree 显示文件和目录由根目录开始的树形结构(2) </span></span><br><span class="line"><span class="string">mkdir dir1 创建一个叫做 '</span>dir1<span class="string">' 的目录'</span> </span><br><span class="line">mkdir dir1 dir2 同时创建两个目录 </span><br><span class="line">mkdir -p /tmp/dir1/dir2 创建一个目录树 </span><br><span class="line">rm -f file1 删除一个叫做 <span class="string">'file1'</span> 的文件<span class="string">' </span></span><br><span class="line"><span class="string">rmdir dir1 删除一个叫做 '</span>dir1<span class="string">' 的目录'</span> </span><br><span class="line">rm -rf dir1 删除一个叫做 <span class="string">'dir1'</span> 的目录并同时删除其内容 </span><br><span class="line">rm -rf dir1 dir2 同时删除两个目录及它们的内容 </span><br><span class="line">mv dir1 new_dir 重命名/移动 一个目录 </span><br><span class="line">cp file1 file2 复制一个文件 </span><br><span class="line">cp dir/* . 复制一个目录下的所有文件到当前工作目录 </span><br><span class="line">cp -a /tmp/dir1 . 复制一个目录到当前工作目录 </span><br><span class="line">cp -a dir1 dir2 复制一个目录 </span><br><span class="line">ln -s file1 lnk1 创建一个指向文件或目录的软链接 </span><br><span class="line">ln file1 lnk1 创建一个指向文件或目录的物理链接 </span><br><span class="line">touch -t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm) </span><br><span class="line">file file1 outputs the mime <span class="built_in">type</span> of the file as text</span><br></pre></td></tr></table></figure>
+        <p>Spark SQL是Spark用来处理结构化数据的一个模块，它提供了一个编程抽象叫做DataFrame并且作为分布式SQL查询引擎的作用。</p>
+<p>Hive是将Hive SQL转换成MapReduce然后提交到集群上执行，大大简化了编写MapReduce的程序的复杂性，由于MapReduce这种计算模型执行效率比较慢。所有Spark SQL的应运而生，它是将Spark SQL转换成RDD，然后提交到集群执行，执行效率非常快！</p>
+<p>优点：1.易整合   2.统一的数据访问方式   3.兼容Hive   4.标准的数据连接    </p>
+<h3 id="什么是DataFrames"><a href="#什么是DataFrames" class="headerlink" title="什么是DataFrames"></a>什么是DataFrames</h3><p>与RDD类似，DataFrame也是一个分布式数据容器。然而DataFrame更像传统数据库的二维表格，除了数据以外，还记录数据的结构信息，即schema。同时，与Hive类似，DataFrame也支持嵌套数据类型（struct、array和map）。从API易用性的角度上 看，DataFrame API提供的是一套高层的关系操作，比函数式的RDD API要更加友好，门槛更低。由于与R和Pandas的DataFrame类似，Spark DataFrame很好地继承了传统单机数据分析的开发体验。</p>
+<p>创建DataFrames<br> 在Spark SQL中SQLContext是创建DataFrames和执行SQL的入口，在spark-1.5.2中已经内置了一个sqlContext</p>
+<p>1.在本地创建一个文件，有三列，分别是id、name、age，用空格分隔，然后上传到hdfs上<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdfs dfs -put person.txt /</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522634938369&amp;di=c9c2a3206bc6055ad837fea29977d3b1&amp;imgtype=0&amp;src=http%3A%2F%2Fimg1.ph.126.net%2Fzkm1sklHmxFluhGjzJMfEg%3D%3D%2F6619441529746751863.png" alt=""></p>
+<p>2.在spark shell执行下面命令，读取数据，将每一行的数据使用列分隔符分割<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val lineRDD = sc.textFile(<span class="string">"hdfs://node1.test.cn:9000/person.txt"</span>).map(_.split(<span class="string">" "</span>))</span><br></pre></td></tr></table></figure></p>
         
-          <a class="article-more-a" href="/2016/10/20/learnlinux/#more">more >></a>
+          <a class="article-more-a" href="/2017/09/23/sparksql/#more">more >></a>
         
       
 
@@ -274,7 +277,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SparkSQL</a>
         		</li>
       		
 		</ul>
@@ -284,7 +287,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/20/learnlinux/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/23/sparksql/">展开全文 >></a>
         </p>
       
 
@@ -314,6 +317,670 @@
 
 
   
+    <article id="post-kafka2spark" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/21/kafka2spark/">Kafka整合Spark</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/21/kafka2spark/" class="archive-article-date">
+  	<time datetime="2017-09-21T11:29:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="安装zk集群"><a href="#安装zk集群" class="headerlink" title="安装zk集群"></a>安装zk集群</h3><p>1.上传zk安装包</p>
+<p>2.解压</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">3.配置（先在一台节点上配置）</span><br><span class="line">	3.1添加一个zoo.cfg配置文件</span><br><span class="line"></span><br><span class="line">	<span class="variable">$ZOOKEEPER</span>/conf</span><br><span class="line">	mv zoo_sample.cfg zoo.cfg</span><br><span class="line">	</span><br><span class="line">	3.2修改配置文件（zoo.cfg）</span><br><span class="line">		dataDir=/<span class="built_in">test</span>/zookeeper-3.4.5/data</span><br><span class="line">		</span><br><span class="line">		server.5=<span class="built_in">test</span>:2888:3888</span><br><span class="line">		server.6=<span class="built_in">test</span>:2888:3888</span><br><span class="line">		server.7=<span class="built_in">test</span>:2888:3888</span><br><span class="line">	</span><br><span class="line">	3.3在（dataDir=/<span class="built_in">test</span>/zookeeper-3.4.5/data）创建一个myid文件，里面内容是server.N中的N（server.2里面内容为2）</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"5"</span> &gt; myid</span><br><span class="line">	</span><br><span class="line">	3.4将配置好的zk拷贝到其他节点</span><br><span class="line">		scp -r /<span class="built_in">test</span>/zookeeper-3.4.5/ <span class="built_in">test</span>:/<span class="built_in">test</span>/</span><br><span class="line">		scp -r /<span class="built_in">test</span>/zookeeper-3.4.5/ <span class="built_in">test</span>:/<span class="built_in">test</span>/</span><br><span class="line">	</span><br><span class="line">	3.5注意：在其他节点上一定要修改myid的内容</span><br><span class="line">		在test06应该讲myid的内容改为6 （<span class="built_in">echo</span> <span class="string">"6"</span> &gt; myid）</span><br><span class="line">		在test07应该讲myid的内容改为7 （<span class="built_in">echo</span> <span class="string">"7"</span> &gt; myid）</span><br><span class="line">		</span><br><span class="line">4.启动集群</span><br><span class="line">	分别启动zk</span><br><span class="line">		./zkServer.sh start</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/09/21/kafka2spark/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Kafka&Spark</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/21/kafka2spark/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-sparkstreaming" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/20/sparkstreaming/">流式计算Sparkstreaming</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/20/sparkstreaming/" class="archive-article-date">
+  	<time datetime="2017-09-20T02:24:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是Spark-Streaming"><a href="#什么是Spark-Streaming" class="headerlink" title="什么是Spark Streaming"></a>什么是Spark Streaming</h3><p>Spark Streaming类似于Apache Storm，用于流式数据的处理。根据其官方文档介绍，Spark Streaming有高吞吐量和容错能力强等特点。Spark Streaming支持的数据输入源很多，例如：Kafka、Flume、Twitter、ZeroMQ和简单的TCP套接字等等。数据输入后可以用Spark的高度抽象原语如：map、reduce、join、window等进行运算。而结果也能保存在很多地方，如HDFS，数据库等。另外Spark Streaming也能和MLlib（机器学习）以及Graphx完美融合。</p>
+<p>Spark Streaming有哪些优点？</p>
+<p>1 易用<br>2 容错<br>3 易整合到Spark体系</p>
+<p>Spark与Storm的对比</p>
+<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522633839474&amp;di=d4ec2725a7bc0453f81b3cc7a3e2029f&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.2cto.com%2FCollfiles%2F20171111%2F20171111132947133.png" alt=""><br>
+        
+          <a class="article-more-a" href="/2017/09/20/sparkstreaming/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Sparkstreaming</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/20/sparkstreaming/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mahout" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/10/mahout/">协同过滤算法与Mahout推荐系统</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/10/mahout/" class="archive-article-date">
+  	<time datetime="2017-08-10T06:38:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Mahout是什么"><a href="#Mahout是什么" class="headerlink" title="Mahout是什么"></a>Mahout是什么</h3><p>Mahout是一个算法库,集成了很多算法。<br>Apache Mahout 是 Apache Software Foundation（ASF）旗下的一个开源项目，提供一些可扩展的机器学习领域经典算法的实现，旨在帮助开发人员更加方便快捷地创建智能应用程序。<br>Mahout项目目前已经有了多个公共发行版本。Mahout包含许多实现，包括聚类、分类、推荐过滤、频繁子项挖掘。<br>通过使用 Apache Hadoop 库，Mahout 可以有效地扩展到Hadoop集群。<br>Mahout 的创始人 Grant Ingersoll 介绍了机器学习的基本概念，并演示了如何使用 Mahout 来实现文档集群、提出建议和组织内容。</p>
+<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522637261139&amp;di=88fb0d42657783f1ec12a36ece8e65ca&amp;imgtype=0&amp;src=http%3A%2F%2Fpic002.cnblogs.com%2Fimages%2F2012%2F296485%2F2012071118333582.jpg" alt=""></p>
+<h3 id="Mahout能做什么"><a href="#Mahout能做什么" class="headerlink" title="Mahout能做什么"></a>Mahout能做什么</h3><p>2.1、推荐引擎<br>在目前采用的机器学习技术中，推荐引擎是最容易被一眼认出来的，也是应用范围最广的。服务商或网站会根据你过去的行为为你推荐书籍、电影或文章。<br>在部署了推荐系统的电子商务中，亚马逊大概是最有名的。亚马逊基于用户的交易行为和网站记录为你推荐你可能喜欢的商品。<br>而facebook这样的社交网络则利用推荐技术为你找到最可能尚未关联的朋友。<br>同时，这一技术也被各大知名国内网站所使用，如腾讯、人人、京东、淘宝。<br>2.2、聚类<br>顾名思义，物以类聚，人以群分。聚类是把具有共同属性的物品进行归类。<br>Google news使用聚类技术通过标题把新闻文章进行分组，从而按照逻辑线索来显示新闻，而并非给出所有新闻的原始列表。<br>2.3、分类<br>分类技术决定了一个事物多大程度上从属于某种类别或类型，或者多大程度上具有或者不具有某些属性。与聚类一样，分类无处不在，但更多隐身于幕后。通常这些系统会考察类别中的大量实例，来学习推到出分类的规则。<br>雅虎邮箱基于用户以前对正常右键和垃圾邮件的报告，以及电子右键自身的特征，来判别到来的消息是否是垃圾邮件。</p>
+        
+          <a class="article-more-a" href="/2017/08/10/mahout/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Mahout</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/10/mahout/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-sparkrdd" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/19/sparkrdd/">云计算之SparkRDD</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/19/sparkrdd/" class="archive-article-date">
+  	<time datetime="2017-07-19T07:37:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522631342700&amp;di=de0848b493e9117973cb1cec24395365&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.thebigdata.cn%2Fupload%2F2016-07%2F1607111118205827.jpg" alt=""></p>
+<h2 id="弹性分布式数据集RDD"><a href="#弹性分布式数据集RDD" class="headerlink" title="弹性分布式数据集RDD"></a>弹性分布式数据集RDD</h2><h3 id="什么是RDD"><a href="#什么是RDD" class="headerlink" title="什么是RDD"></a>什么是RDD</h3><p>RDD（Resilient Distributed Dataset）叫做分布式数据集，是Spark中最基本的数据抽象，它代表一个不可变、可分区、里面的元素可并行计算的集合。RDD具有数据流模型的特点：自动容错、位置感知性调度和可伸缩性。RDD允许用户在执行多个查询时显式地将工作集缓存在内存中，后续的查询能够重用工作集，这极大地提升了查询速度。</p>
+<h3 id="RDD的属性"><a href="#RDD的属性" class="headerlink" title="RDD的属性"></a>RDD的属性</h3><p>1）一组分片（Partition），即数据集的基本组成单位。对于RDD来说，每个分片都会被一个计算任务处理，并决定并行计算的粒度。用户可以在创建RDD时指定RDD的分片个数，如果没有指定，那么就会采用默认值。默认值就是程序所分配到的CPU Core的数目。</p>
+<p>2）一个计算每个分区的函数。Spark中RDD的计算是以分片为单位的，每个RDD都会实现compute函数以达到这个目的。compute函数会对迭代器进行复合，不需要保存每次计算的结果。</p>
+<p>3）RDD之间的依赖关系。RDD的每次转换都会生成一个新的RDD，所以RDD之间就会形成类似于流水线一样的前后依赖关系。在部分分区数据丢失时，Spark可以通过这个依赖关系重新计算丢失的分区数据，而不是对RDD的所有分区进行重新计算。</p>
+<p>4）一个Partitioner，即RDD的分片函数。当前Spark中实现了两种类型的分片函数，一个是基于哈希的HashPartitioner，另外一个是基于范围的RangePartitioner。只有对于于key-value的RDD，才会有Partitioner，非key-value的RDD的Parititioner的值是None。Partitioner函数不但决定了RDD本身的分片数量，也决定了parent RDD Shuffle输出时的分片数量。</p>
+<p>5）一个列表，存储存取每个Partition的优先位置（preferred location）。对于一个HDFS文件来说，这个列表保存的就是每个Partition所在的块的位置。按照“移动数据不如移动计算”的理念，Spark在进行任务调度的时候，会尽可能地将计算任务分配到其所要处理数据块的存储位置。</p>
+<h3 id="创建RDD"><a href="#创建RDD" class="headerlink" title="创建RDD"></a>创建RDD</h3><p>1）由一个已经存在的Scala集合创建。<br>val rdd1 = sc.parallelize(Array(1,2,3,4,5,6,7,8))</p>
+<p>2）由外部存储系统的数据集创建，包括本地的文件系统，还有所有Hadoop支持的数据集，比如HDFS、Cassandra、HBase等<br>val rdd2 = sc.textFile(“hdfs://node1.test.cn:9000/words.txt”)<br>
+        
+          <a class="article-more-a" href="/2017/07/19/sparkrdd/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SparkRDD</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/19/sparkrdd/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-storm-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/16/storm-1/">云计算之Spark</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/16/storm-1/" class="archive-article-date">
+  	<time datetime="2017-07-16T07:43:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522632738229&amp;di=4dde0bb268fbccade37b8d6e30831a51&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.raincent.com%2Fuploadfile%2F2017%2F0421%2F20170421025515681.jpg" alt=""></p>
+<p>Spark是一种快速、通用、可扩展的大数据分析引擎，2009年诞生于加州大学伯克利分校AMPLab，2010年开源，2013年6月成为Apache孵化项目，2014年2月成为Apache顶级项目。目前，Spark生态系统已经发展成为一个包含多个子项目的集合，其中包含SparkSQL、Spark Streaming、GraphX、MLlib等子项目，Spark是基于内存计算的大数据并行计算框架。Spark基于内存计算，提高了在大数据环境下数据处理的实时性，同时保证了高容错性和高可伸缩性，允许用户将Spark部署在大量廉价硬件之上，形成集群。Spark得到了众多大数据公司的支持，这些公司包括Hortonworks、IBM、Intel、Cloudera、MapR、Pivotal、百度、阿里、腾讯、京东、携程、优酷土豆。当前百度的Spark已应用于凤巢、大搜索、直达号、百度大数据等业务；阿里利用GraphX构建了大规模的图计算和图挖掘系统，实现了很多生产系统的推荐算法；腾讯Spark集群达到8000台的规模，是当前已知的世界上最大的Spark集群。</p>
+<h3 id="为什么要学Spark？"><a href="#为什么要学Spark？" class="headerlink" title="为什么要学Spark？"></a>为什么要学Spark？</h3><p>中间结果输出：基于MapReduce的计算引擎通常会将中间结果输出到磁盘上，进行存储和容错。出于任务管道承接的，考虑，当一些查询翻译到MapReduce任务时，往往会产生多个Stage，而这些串联的Stage又依赖于底层文件系统（如HDFS）来存储每一个Stage的输出结果</p>
+<p>Spark是MapReduce的替代方案，而且兼容HDFS、Hive，可融入Hadoop的生态系统，以弥补MapReduce的不足。</p>
+<h3 id="快"><a href="#快" class="headerlink" title="快"></a>快</h3><p>官方称spark与Hadoop的MapReduce相比，Spark基于内存的运算要快100倍以上，基于硬盘的运算也要快10倍以上。Spark实现了高效的DAG执行引擎，可以通过基于内存来高效处理数据流。</p>
+<h3 id="易用"><a href="#易用" class="headerlink" title="易用"></a>易用</h3><p>Spark支持Java、Python和Scala的API，还支持超过80种高级算法，使用户可以快速构建不同的应用。而且Spark支持交互式的Python和Scala的shell，可以非常方便地在这些shell中使用Spark集群来验证解决问题的方法。</p>
+        
+          <a class="article-more-a" href="/2017/07/16/storm-1/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spark</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/16/storm-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-es" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/07/es/">内存数据库Redis</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/07/es/" class="archive-article-date">
+  	<time datetime="2017-06-07T03:05:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是Redis"><a href="#什么是Redis" class="headerlink" title="什么是Redis"></a>什么是Redis</h3><p>Redis是目前一个非常优秀的key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set有序集合)和hash（哈希类型）</p>
+<p><img src="http://image.bubuko.com/info/201803/20180325224942110130.png" alt=""></p>
+<p>Redis 优势和优点<br>（1）性能极高 – Redis能读的速度是110000次/s,写的速度是81000次/s 。</p>
+<p>（2）丰富的数据类型 – Redis支持二进制案例的 Strings, Lists, Hashes, Sets 及 Ordered Sets 数据类型操作。</p>
+<p>（3）原子 – Redis的所有操作都是原子性的，同时Redis还支持对几个操作全并后的原子性执行。</p>
+<p>（4）丰富的特性 – Redis还支持 publish/subscribe（发布/订阅）, 通知, key 过期等等特性。</p>
+<p>Redis 与其他 key - value 缓存产品有以下三个特点：<br>（1）Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。</p>
+<p>（2）Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。</p>
+<p>（3）Redis支持数据的备份，即master-slave模式的数据备份。</p>
+<p>Redis和Memcached的其他区别如下：</p>
+<p>1、Redis和Memcached都是将数据存放在内存中，都是内存数据库。不过Memcached还可用于缓存其他东西，例如图片、视频等等；</p>
+<p>2、Redis不仅仅支持简单的K/V类型的数据，同时还提供List，Set，Hash等数据结构的存储；</p>
+<p>3、虚拟内存–Redis当物理内存用完时，可以将一些很久没用到的Value 交换到磁盘；</p>
+<p>4、过期策略–Memcached在set时就指定，例如:set key1 0 0 8,即永不过期。Redis可以通过例如expire 设定，例如:expire name 10；</p>
+<p>5、分布式–设定Memcached集群，利用magent做一主多从;Redis可以做一主多从。都可以一主一从；</p>
+<p>6、存储数据安全–Memcached挂掉后，数据没了；Redis可以定期保存到磁盘（持久化）；</p>
+<p>7、灾难恢复–Memcached挂掉后，数据不可恢复; Redis数据丢失后可以通过AOF恢复；</p>
+<p>8、Redis支持数据的备份，即Master-Slave模式的数据备份；</p>
+<p>9、应用场景不一样：Redis出来作为NoSQL数据库使用外，还能用做消息队列、数据堆栈和数据缓存等；Memcached适合于缓存SQL语句、数据集、用户临时性数据、延迟查询数据和Session等。</p>
+        
+          <a class="article-more-a" href="/2017/06/07/es/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/07/es/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-kafka" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/16/kafka/">实时计算之Kafka</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/16/kafka/" class="archive-article-date">
+  	<time datetime="2017-03-16T10:40:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522632116481&amp;di=e2382b26870ee6221acd95f176925c24&amp;imgtype=0&amp;src=http%3A%2F%2Fimages2015.cnblogs.com%2Fblog%2F834562%2F201601%2F834562-20160101195241682-865330698.png" alt=""></p>
+<h3 id="Kafka是什么"><a href="#Kafka是什么" class="headerlink" title="Kafka是什么"></a>Kafka是什么</h3><p>在流式计算中，Kafka一般用来缓存数据，Storm通过消费Kafka的数据进行计算。</p>
+<p>消息系统的核心作用就是三点：解耦，异步和并行</p>
+<p>KAFKA + STORM +REDIS</p>
+<p>Apache Kafka是一个开源消息系统，由Scala写成。是由Apache软件基金会开发的一个开源消息系统项目。<br>Kafka最初是由LinkedIn开发，并于2011年初开源。2012年10月从Apache Incubator毕业。该项目的目标是为处理实时数据提供一个统一、高通量、低等待的平台。<br>Kafka是一个分布式消息队列：生产者、消费者的功能。它提供了类似于JMS的特性，但是在设计实现上完全不同，此外它并不是JMS规范的实现。<br>Kafka对消息保存时根据Topic进行归类，发送消息者称为Producer,消息接受者称为Consumer,此外kafka集群有多个kafka实例组成，每个实例(server)成为broker。<br>无论是kafka集群，还是producer和consumer都依赖于zookeeper集群保存一些meta信息，来保证系统可用性</p>
+<h3 id="JMS是什么"><a href="#JMS是什么" class="headerlink" title="JMS是什么"></a>JMS是什么</h3><p>2.1、JMS的基础<br>    JMS是什么：JMS是Java提供的一套技术规范<br>JMS干什么用：用来异构系统 集成通信，缓解系统瓶颈，提高系统的伸缩性增强系统用户体验，使得系统模块化和组件化变得可行并更加灵活<br>通过什么方式：生产消费者模式（生产者、服务器、消费者）</p>
+<p>JMS消息传输模型<br>点对点模式（一对一，消费者主动拉取数据，消息收到后消息清除）<br>点对点模型通常是一个基于拉取或者轮询的消息传送模型，这种模型从队列中请求信息，而不是将消息推送到客户端。这个模型的特点是发送到队列的消息被一个且只有一个接收者接收处理，即使有多个消息监听者也是如此。<br>发布/订阅模式（一对多，数据生产后，推送给所有订阅者）<br>发布订阅模型则是一个基于推送的消息传送模型。发布订阅模型可以有多种不同的订阅者，临时订阅者只在主动监听主题时才接收消息，而持久订阅者则监听主题的所有消息，即时当前订阅者不可用，处于离线状态。</p>
+<p>queue.put（object）  数据生产<br>queue.take(object)    数据消费</p>
+        
+          <a class="article-more-a" href="/2017/03/16/kafka/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Kafka</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/16/kafka/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-storm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/15/storm/">实时计算之storm</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/15/storm/" class="archive-article-date">
+  	<time datetime="2017-02-15T01:55:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522632653140&amp;di=bff8da70edfa95117cb952fef9b7cdbe&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.uml.org.cn%2Fbigdata%2Fimages%2F20160802411.png" alt=""></p>
+<p>离线计算是什么？<br>    离线计算：批量获取数据、批量传输数据、周期性批量计算数据、数据展示<br>    代表技术：Sqoop批量导入数据、HDFS批量存储数据、MapReduce批量计算数据、Hive批量计算数据、***任务调度<br>1，hivesql<br>2、调度平台<br>3、Hadoop集群运维<br>4、数据清洗（脚本语言）<br>5、元数据管理<br>6、数据稽查<br>7、数据仓库模型架构</p>
+<p>流式计算是什么<br>    流式计算：数据实时产生、数据实时传输、数据实时计算、实时展示<br>    代表技术：Flume实时获取数据、Kafka/metaq实时数据存储、Storm/JStorm实时数据计算、Redis实时结果缓存、持久化存储(mysql)。<br>    一句话总结：将源源不断产生的数据实时收集并实时计算，尽可能快的得到计算结果</p>
+<p>离线计算与实时计算的区别<br>    最大的区别：实时收集、实时计算、实时展示</p>
+<p>Storm与Hadoop的区别<br>Storm用于实时计算，Hadoop用于离线计算。<br>Storm处理的数据保存在内存中，源源不断；Hadoop处理的数据保存在文件系统中，一批一批。<br>Storm的数据通过网络传输进来；Hadoop的数据保存在磁盘中。<br>Storm与Hadoop的编程模型相似</p>
+<p>Job：任务名称<br>JobTracker：项目经理<br>TaskTracker：开发组长、产品经理<br>Child:负责开发的人员<br>Mapper/Reduce:开发人员中的两种角色，一种是服务器开发、一种是客户端开发</p>
+<p>Topology:任务名称<br>Nimbus:项目经理<br>Supervisor:开组长、产品经理<br>Worker:开人员<br>Spout/Bolt：开人员中的两种角色，一种是服务器开发、一种是客户端开发</p>
+        
+          <a class="article-more-a" href="/2017/02/15/storm/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">storm</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/15/storm/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -399,7 +1066,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Awk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Flume</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">azkaban</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">HA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -408,6 +1103,78 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">药别停</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iptables</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kafka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">keepalived</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Mahout</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Kafka&Spark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">NIO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RPC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SparkRDD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SparkSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Sparkstreaming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">storm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">yum</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
             
             <div class="clearfix"></div>
