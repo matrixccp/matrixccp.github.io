@@ -151,33 +151,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-azkaban" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-storm-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/20/azkaban/">工作流调度器azkaban</a>
+      <a class="article-title" href="/2015/04/16/storm-1/">强大的Spark</a>
     </h1>
   
 
         
-        <a href="/2016/11/20/azkaban/" class="archive-article-date">
-  	<time datetime="2016-11-20T10:24:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-20</time>
+        <a href="/2015/04/16/storm-1/" class="archive-article-date">
+  	<time datetime="2015-04-16T07:43:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-04-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522631994442&amp;di=5c2bf9577e8a96f395bc5186a80d8ac5&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.kuqin.com%2Fupimg%2Fallimg%2F151022%2F213Q54055-1.jpg" alt=""></p>
-<p>为什么需要工作流调度系统<br>一个完整的数据分析系统通常都是由大量任务单元组成：<br>shell脚本程序，java程序，mapreduce程序、hive脚本等<br>各任务单元之间存在时间先后及前后依赖关系<br>为了很好地组织起这样的复杂执行计划，需要一个工作流调度系统来调度执行；</p>
-<p>例如，我们可能有这样一个需求，某个业务系统每天产生20G原始数据，我们每天都要对其进行处理，处理步骤如下所示：<br>1、通过Hadoop先将原始数据同步到HDFS上；<br>2、借助MapReduce计算框架对原始数据进行转换，生成的数据以分区表的形式存储到多张Hive表中；<br>3、需要对Hive中多个表的数据进行JOIN处理，得到一个明细数据Hive大表；<br>4、将明细数据进行复杂的统计分析，得到结果报表信息；<br>5、需要将统计分析得到的结果数据同步到业务系统中，供业务调用使用。</p>
-<p>2.1.2 工作流调度实现方式<br>简单的任务调度：直接使用linux的crontab来定义；<br>复杂的任务调度：开发调度平台<br>或使用现成的开源调度系统，比如ooize、azkaban等</p>
-<p>2.1.3 常见工作流调度系统<br>市面上目前有许多工作流调度器<br>在hadoop领域，常见的工作流调度器有Oozie, Azkaban,Cascading,Hamake等</p>
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522632738229&amp;di=4dde0bb268fbccade37b8d6e30831a51&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.raincent.com%2Fuploadfile%2F2017%2F0421%2F20170421025515681.jpg" alt=""></p>
+<p>Spark是一种快速、通用、可扩展的大数据分析引擎，2009年诞生于加州大学伯克利分校AMPLab，2010年开源，2013年6月成为Apache孵化项目，2014年2月成为Apache顶级项目。目前，Spark生态系统已经发展成为一个包含多个子项目的集合，其中包含SparkSQL、Spark Streaming、GraphX、MLlib等子项目，Spark是基于内存计算的大数据并行计算框架。Spark基于内存计算，提高了在大数据环境下数据处理的实时性，同时保证了高容错性和高可伸缩性，允许用户将Spark部署在大量廉价硬件之上，形成集群。Spark得到了众多大数据公司的支持，这些公司包括Hortonworks、IBM、Intel、Cloudera、MapR、Pivotal、百度、阿里、腾讯、京东、携程、优酷土豆。当前百度的Spark已应用于凤巢、大搜索、直达号、百度大数据等业务；阿里利用GraphX构建了大规模的图计算和图挖掘系统，实现了很多生产系统的推荐算法；腾讯Spark集群达到8000台的规模，是当前已知的世界上最大的Spark集群。</p>
+<h3 id="什么是Spark？"><a href="#什么是Spark？" class="headerlink" title="什么是Spark？"></a>什么是Spark？</h3><p>中间结果输出：基于MapReduce的计算引擎通常会将中间结果输出到磁盘上，进行存储和容错。出于任务管道承接的，考虑，当一些查询翻译到MapReduce任务时，往往会产生多个Stage，而这些串联的Stage又依赖于底层文件系统（如HDFS）来存储每一个Stage的输出结果</p>
+<p>Spark是MapReduce的替代方案，而且兼容HDFS、Hive，可融入Hadoop的生态系统，以弥补MapReduce的不足。</p>
+<h3 id="快"><a href="#快" class="headerlink" title="快"></a>快</h3><p>官方称spark与Hadoop的MapReduce相比，Spark基于内存的运算要快100倍以上，基于硬盘的运算也要快10倍以上。Spark实现了高效的DAG执行引擎，可以通过基于内存来高效处理数据流。</p>
+<h3 id="易用"><a href="#易用" class="headerlink" title="易用"></a>易用</h3><p>Spark支持Java、Python和Scala的API，还支持超过80种高级算法，使用户可以快速构建不同的应用。而且Spark支持交互式的Python和Scala的shell，可以非常方便地在这些shell中使用Spark集群来验证解决问题的方法。</p>
         
-          <a class="article-more-a" href="/2016/11/20/azkaban/#more">more >></a>
+          <a class="article-more-a" href="/2015/04/16/storm-1/#more">more >></a>
         
       
 
@@ -191,7 +192,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">azkaban</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spark</a>
         		</li>
       		
 		</ul>
@@ -201,87 +202,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/20/azkaban/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-flume" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/17/flume/">日志采集系统Flume</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/17/flume/" class="archive-article-date">
-  	<time datetime="2016-11-17T11:40:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522631850940&amp;di=c592d925d2353d1d34c64e2f0bcc1e3b&amp;imgtype=0&amp;src=http%3A%2F%2Fstatic.open-open.com%2Flib%2FuploadImg%2F20160120%2F20160120173428_682.png" alt=""></p>
-<p>在一个完整的大数据处理系统中，除了hdfs+mapreduce+hive组成分析系统的核心之外，还需要数据采集、结果数据导出、任务调度等不可或缺的辅助系统，而这些辅助工具在hadoop生态体系中都有便捷的开源框架</p>
-<p>Flume是一个分布式、可靠、和高可用的海量日志采集、聚合和传输的系统。<br>Flume可以采集文件，socket数据包等各种形式源数据，又可以将采集到的数据输出到HDFS、hbase、hive、kafka等众多外部存储系统中<br>一般的采集需求，通过对flume的简单配置即可实现<br>Flume针对特殊场景也具备良好的自定义扩展能力，因此，flume可以适用于大部分的日常数据采集场景</p>
-<p>运行机制<br>1、Flume分布式系统中最核心的角色是agent，flume采集系统就是由一个个agent所连接起来形成<br>2、每一个agent相当于一个数据传递员[Source 到 Channel 到 Sink之间传递数据的形式是Event事件；Event事件是一个数据流单元。</p>
-<p>]，内部有三个组件：<br>a)Source：采集源，用于跟数据源对接，以获取数据<br>b)Sink：下沉地，采集数据的传送目的，用于往下一级agent传递数据或者往最终存储系统传递数据<br>c)Channel：angent内部的数据传输通道，用于从source将数据传递到sink<br>
-        
-          <a class="article-more-a" href="/2016/11/17/flume/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Flume</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/17/flume/">展开全文 >></a>
+          <a class="article-more-a" href="/2015/04/16/storm-1/">展开全文 >></a>
         </p>
       
 
@@ -318,13 +239,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/13/hive/">云计算之Hive</a>
+      <a class="article-title" href="/2015/03/13/hive/">数据仓库Hive</a>
     </h1>
   
 
         
-        <a href="/2016/11/13/hive/" class="archive-article-date">
-  	<time datetime="2016-11-13T10:34:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-13</time>
+        <a href="/2015/03/13/hive/" class="archive-article-date">
+  	<time datetime="2015-03-13T10:34:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-13</time>
 </a>
         
       </header>
@@ -343,7 +264,7 @@
 <h3 id="各组件的基本功能"><a href="#各组件的基本功能" class="headerlink" title="各组件的基本功能"></a>各组件的基本功能</h3><p>用户接口主要由三个：CLI、JDBC/ODBC和WebGUI。其中，CLI为shell命令行；JDBC/ODBC是Hive的JAVA实现，与传统数据库JDBC类似；WebGUI是通过浏览器访问Hive。<br>元数据存储：Hive 将元数据存储在数据库中。Hive 中的元数据包括表的名字，表的列和分区及其属性，表的属性（是否为外部表等），表的数据所在目录等。<br>解释器、编译器、优化器完成 HQL 查询语句从词法分析、语法分析、编译、优化以及查询计划的生成。生成的查询计划存储在 HDFS 中，并在随后有 MapReduce 调用执行。<br>1.3Hive与Hadoop的关系<br>Hive利用HDFS存储数据，利用MapReduce查询数据</p>
 <h3 id="总结-hive具有sql数据库的外表，但应用场景完全不同，hive只适合用来做批量数据统计分析"><a href="#总结-hive具有sql数据库的外表，但应用场景完全不同，hive只适合用来做批量数据统计分析" class="headerlink" title="总结: hive具有sql数据库的外表，但应用场景完全不同，hive只适合用来做批量数据统计分析"></a>总结: hive具有sql数据库的外表，但应用场景完全不同，hive只适合用来做批量数据统计分析</h3>
         
-          <a class="article-more-a" href="/2016/11/13/hive/#more">more >></a>
+          <a class="article-more-a" href="/2015/03/13/hive/#more">more >></a>
         
       
 
@@ -367,7 +288,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/13/hive/">展开全文 >></a>
+          <a class="article-more-a" href="/2015/03/13/hive/">展开全文 >></a>
         </p>
       
 
@@ -397,34 +318,33 @@
 
 
   
-    <article id="post-hadoop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-azkaban" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/10/hadoop/">什么是hadoop</a>
+      <a class="article-title" href="/2015/02/20/azkaban/">工作流调度器azkaban</a>
     </h1>
   
 
         
-        <a href="/2016/11/10/hadoop/" class="archive-article-date">
-  	<time datetime="2016-11-10T09:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-10</time>
+        <a href="/2015/02/20/azkaban/" class="archive-article-date">
+  	<time datetime="2015-02-20T10:24:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-02-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522631635543&amp;di=113281719893005c6e6b2c81c46e5f6b&amp;imgtype=0&amp;src=http%3A%2F%2Fstatic.oschina.net%2Fuploads%2Fimg%2F201402%2F15184654_GUnO.png" alt=""></p>
-<p>1.1 什么是HADOOP<br>1.HADOOP是apache旗下的一套开源软件平台<br>2.HADOOP提供的功能：利用服务器集群，根据用户的自定义业务逻辑，对海量数据进行分布式处理<br>3.HADOOP的核心组件有<br>A.HDFS（分布式文件系统）<br>B.YARN（运算资源调度系统）<br>C.MAPREDUCE（分布式运算编程框架）<br>4.广义上来说，HADOOP通常是指一个更广泛的概念——HADOOP生态圈<br>1.2 HADOOP产生背景<br>1.HADOOP最早起源于Nutch。Nutch的设计目标是构建一个大型的全网搜索引擎，包括网页抓取、索引、查询等功能，但随着抓取网页数量的增加，遇到了严重的可扩展性问题——如何解决数十亿网页的存储和索引问题。<br>2.2003年、2004年谷歌发表的两篇论文为该问题提供了可行的解决方案。<br>——分布式文件系统（GFS），可用于处理海量网页的存储<br>——分布式计算框架MAPREDUCE，可用于处理海量网页的索引计算问题。<br>3.Nutch的开发人员完成了相应的开源实现HDFS和MAPREDUCE，并从Nutch中剥离成为独立项目HADOOP，到2008年1月，HADOOP成为Apache顶级项目，迎来了它的快速发展期。<br>1.3 HADOOP在大数据、云计算中的位置和关系<br>1.云计算是分布式计算、并行计算、网格计算、多核计算、网络存储、虚拟化、负载均衡等传统计算机技术和互联网技术融合发展的产物。借助IaaS(基础设施即服务)、PaaS(平台即服务)、SaaS（软件即服务）等业务模式，把强大的计算能力提供给终端用户。</p>
-<p>2.现阶段，云计算的两大底层支撑技术为“虚拟化”和“大数据技术”</p>
-<p>3.而HADOOP则是云计算的PaaS层的解决方案之一，并不等同于PaaS，更不等同于云计算本身。</p>
-<h3 id="重点组件："><a href="#重点组件：" class="headerlink" title="重点组件："></a>重点组件：</h3><p>HDFS：分布式文件系统<br>MAPREDUCE：分布式运算程序开发框架<br>HIVE：基于大数据技术（文件系统+运算框架）的SQL数据仓库工具<br>HBASE：基于HADOOP的分布式海量数据库<br>ZOOKEEPER：分布式协调服务基础组件<br>Mahout：基于mapreduce/spark/flink等分布式运算框架的机器学习算法库<br>Oozie：工作流调度框架<br>Sqoop：数据导入导出工具<br>Flume：日志数据采集框架</p>
-<h3 id="数据处理流程"><a href="#数据处理流程" class="headerlink" title="数据处理流程"></a>数据处理流程</h3><p>1)数据采集：定制开发采集程序，或使用开源框架FLUME<br>2)数据预处理：定制开发mapreduce程序运行于hadoop集群<br>3)数据仓库技术：基于hadoop之上的Hive<br>4)数据导出：基于hadoop的sqoop数据导入导出工具<br>5)数据可视化：定制开发web程序或使用kettle等产品<br>6)整个过程的流程调度：hadoop生态圈中的oozie工具或其他类似开源产品</p>
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522631994442&amp;di=5c2bf9577e8a96f395bc5186a80d8ac5&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.kuqin.com%2Fupimg%2Fallimg%2F151022%2F213Q54055-1.jpg" alt=""></p>
+<p>为什么需要工作流调度系统<br>一个完整的数据分析系统通常都是由大量任务单元组成：<br>shell脚本程序，java程序，mapreduce程序、hive脚本等<br>各任务单元之间存在时间先后及前后依赖关系<br>为了很好地组织起这样的复杂执行计划，需要一个工作流调度系统来调度执行；</p>
+<p>例如，我们可能有这样一个需求，某个业务系统每天产生20G原始数据，我们每天都要对其进行处理，处理步骤如下所示：<br>1、通过Hadoop先将原始数据同步到HDFS上；<br>2、借助MapReduce计算框架对原始数据进行转换，生成的数据以分区表的形式存储到多张Hive表中；<br>3、需要对Hive中多个表的数据进行JOIN处理，得到一个明细数据Hive大表；<br>4、将明细数据进行复杂的统计分析，得到结果报表信息；<br>5、需要将统计分析得到的结果数据同步到业务系统中，供业务调用使用。</p>
+<p>2.1.2 工作流调度实现方式<br>简单的任务调度：直接使用linux的crontab来定义；<br>复杂的任务调度：开发调度平台<br>或使用现成的开源调度系统，比如ooize、azkaban等</p>
+<p>2.1.3 常见工作流调度系统<br>市面上目前有许多工作流调度器<br>在hadoop领域，常见的工作流调度器有Oozie, Azkaban,Cascading,Hamake等</p>
         
-          <a class="article-more-a" href="/2016/11/10/hadoop/#more">more >></a>
+          <a class="article-more-a" href="/2015/02/20/azkaban/#more">more >></a>
         
       
 
@@ -438,7 +358,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hadoop</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">azkaban</a>
         		</li>
       		
 		</ul>
@@ -448,85 +368,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/10/hadoop/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ha" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/10/ha/">HA高可用</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/10/ha/" class="archive-article-date">
-  	<time datetime="2016-11-10T03:56:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522631775932&amp;di=89bc40c9f21f985f6a05463e33b52295&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D3584593091%2C2621700634%26fm%3D214%26gp%3D0.jpg" alt=""></p>
-<h2 id="正式引入HA机制是从hadoop2-0开始，之前的版本中没有HA机制"><a href="#正式引入HA机制是从hadoop2-0开始，之前的版本中没有HA机制" class="headerlink" title="正式引入HA机制是从hadoop2.0开始，之前的版本中没有HA机制"></a>正式引入HA机制是从hadoop2.0开始，之前的版本中没有HA机制</h2><h2 id="HA的运作机制"><a href="#HA的运作机制" class="headerlink" title="HA的运作机制"></a>HA的运作机制</h2><p>（1）hadoop-HA集群运作机制介绍<br>所谓HA，即高可用（7*24小时不中断服务）<br>实现高可用最关键的是消除单点故障<br>hadoop-ha严格来说应该分成各个组件的HA机制——HDFS的HA、YARN的HA</p>
-<p>（2）HDFS的HA机制详解<br>通过双namenode消除单点故障<br>双namenode协调工作的要点：<br>    A、元数据管理方式需要改变：<br>    内存中各自保存一份元数据<br>    Edits日志只能有一份，只有Active状态的namenode节点可以做写操作<br>    两个namenode都可以读取edits<br>    共享的edits放在一个共享存储中管理（qjournal和NFS两个主流实现）<br>    B、需要一个状态管理功能模块<br>    实现了一个zkfailover，常驻在每一个namenode所在的节点<br>    每一个zkfailover负责监控自己所在namenode节点，利用zk进行状态标识<br>    当需要进行状态切换时，由zkfailover来负责切换<br>    切换时需要防止brain split现象的发生</p>
-        
-          <a class="article-more-a" href="/2016/11/10/ha/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/10/ha/">展开全文 >></a>
+          <a class="article-more-a" href="/2015/02/20/azkaban/">展开全文 >></a>
         </p>
       
 
@@ -563,13 +405,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/08/mapreduce1/">MapReduce参数调优</a>
+      <a class="article-title" href="/2015/02/18/mapreduce1/">MapReduce参数调优</a>
     </h1>
   
 
         
-        <a href="/2016/11/08/mapreduce1/" class="archive-article-date">
-  	<time datetime="2016-11-08T02:55:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-08</time>
+        <a href="/2015/02/18/mapreduce1/" class="archive-article-date">
+  	<time datetime="2015-02-18T02:55:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-02-18</time>
 </a>
         
       </header>
@@ -603,7 +445,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/08/mapreduce1/">展开全文 >></a>
+          <a class="article-more-a" href="/2015/02/18/mapreduce1/">展开全文 >></a>
         </p>
       
 
@@ -633,35 +475,35 @@
 
 
   
-    <article id="post-mapreduce" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-storm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/07/mapreduce/">MapReduce是干什么的</a>
+      <a class="article-title" href="/2015/02/15/storm/">实时计算之storm</a>
     </h1>
   
 
         
-        <a href="/2016/11/07/mapreduce/" class="archive-article-date">
-  	<time datetime="2016-11-07T02:40:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-07</time>
+        <a href="/2015/02/15/storm/" class="archive-article-date">
+  	<time datetime="2015-02-15T01:55:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-02-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522632311765&amp;di=0d8a0e6c160aa24067f5e9a90b00083b&amp;imgtype=0&amp;src=http%3A%2F%2Fs2.51cto.com%2Fwyfs02%2FM02%2F77%2F64%2FwKiom1ZnD0jBRICAAAGEoOloTFQ735.png" alt=""></p>
-<p>Mapreduce是一个分布式运算程序的编程框架，是用户开发“基于hadoop的数据分析应用”的核心框架；<br>Mapreduce核心功能是将用户编写的业务逻辑代码和自带默认组件整合成一个完整的分布式运算程序，并发运行在一个hadoop集群上；</p>
-<p>1.1 为什么要MAPREDUCE<br>（1）海量数据在单机上处理因为硬件资源限制，无法胜任<br>（2）而一旦将单机版程序扩展到集群来分布式运行，将极大增加程序的复杂度和开发难度<br>（3）引入mapreduce框架后，开发人员可以将绝大部分工作集中在业务逻辑的开发上，而将分布式计算中的复杂性交由框架来处理</p>
-<p>设想一个海量数据场景下的wordcount需求：<br>单机版：内存受限，磁盘受限，运算能力受限</p>
-<h3 id="分布式："><a href="#分布式：" class="headerlink" title="分布式："></a>分布式：</h3><p>1、文件分布式存储（HDFS）<br>2、运算逻辑需要至少分成2个阶段（一个阶段独立并发，一个阶段汇聚）<br>3、运算程序如何分发<br>4、程序如何分配运算任务（切片）<br>5、两阶段的程序如何启动？如何协调？<br>6、整个程序运行过程中的监控？容错？重试？</p>
-<p>可见在程序由单机版扩成分布式时，会引入大量的复杂工作。为了提高开发效率，可以将分布式程序中的公共功能封装成框架，让开发人员可以将精力集中于业务逻辑。</p>
-<p>而mapreduce就是这样一个分布式程序的通用框架，其应对以上问题的整体结构如下：<br>1、MRAppMaster(mapreduce application master)<br>2、MapTask<br>3、ReduceTask</p>
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522632653140&amp;di=bff8da70edfa95117cb952fef9b7cdbe&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.uml.org.cn%2Fbigdata%2Fimages%2F20160802411.png" alt=""></p>
+<p>离线计算是什么？<br>    离线计算：批量获取数据、批量传输数据、周期性批量计算数据、数据展示<br>    代表技术：Sqoop批量导入数据、HDFS批量存储数据、MapReduce批量计算数据、Hive批量计算数据、***任务调度<br>1，hivesql<br>2、调度平台<br>3、Hadoop集群运维<br>4、数据清洗（脚本语言）<br>5、元数据管理<br>6、数据稽查<br>7、数据仓库模型架构</p>
+<p>流式计算是什么<br>    流式计算：数据实时产生、数据实时传输、数据实时计算、实时展示<br>    代表技术：Flume实时获取数据、Kafka/metaq实时数据存储、Storm/JStorm实时数据计算、Redis实时结果缓存、持久化存储(mysql)。<br>    一句话总结：将源源不断产生的数据实时收集并实时计算，尽可能快的得到计算结果</p>
+<p>离线计算与实时计算的区别<br>    最大的区别：实时收集、实时计算、实时展示</p>
+<p>Storm与Hadoop的区别<br>Storm用于实时计算，Hadoop用于离线计算。<br>Storm处理的数据保存在内存中，源源不断；Hadoop处理的数据保存在文件系统中，一批一批。<br>Storm的数据通过网络传输进来；Hadoop的数据保存在磁盘中。<br>Storm与Hadoop的编程模型相似</p>
+<p>Job：任务名称<br>JobTracker：项目经理<br>TaskTracker：开发组长、产品经理<br>Child:负责开发的人员<br>Mapper/Reduce:开发人员中的两种角色，一种是服务器开发、一种是客户端开发</p>
+<p>Topology:任务名称<br>Nimbus:项目经理<br>Supervisor:开组长、产品经理<br>Worker:开人员<br>Spout/Bolt：开人员中的两种角色，一种是服务器开发、一种是客户端开发</p>
         
-          <a class="article-more-a" href="/2016/11/07/mapreduce/#more">more >></a>
+          <a class="article-more-a" href="/2015/02/15/storm/#more">more >></a>
         
       
 
@@ -675,7 +517,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">MapReduce</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">storm</a>
         		</li>
       		
 		</ul>
@@ -685,7 +527,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/07/mapreduce/">展开全文 >></a>
+          <a class="article-more-a" href="/2015/02/15/storm/">展开全文 >></a>
         </p>
       
 
@@ -715,35 +557,32 @@
 
 
   
-    <article id="post-nio" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-zookeeper" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/05/nio/">什么是nio&amp;netty</a>
+      <a class="article-title" href="/2014/12/14/zookeeper/">zookeeper安装及配置</a>
     </h1>
   
 
         
-        <a href="/2016/11/05/nio/" class="archive-article-date">
-  	<time datetime="2016-11-05T05:24:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-05</time>
+        <a href="/2014/12/14/zookeeper/" class="archive-article-date">
+  	<time datetime="2014-12-14T06:25:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-12-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522632453224&amp;di=42868b4fe31c98e4ff971d4b278a105a&amp;imgtype=0&amp;src=http%3A%2F%2Fimg2.shangxueba.com%2Fimg%2Fkaifa%2F20140904%2F12%2FBB4008BD06906F6FA78DA1624B4F8303.png" alt=""></p>
-<p>2.1.简介<br>    nio 是New IO 的简称，在jdk1.4 里提供的新api 。Sun 官方标榜的特性如下： 为所有的原始类型提供(Buffer)缓存支持。字符集编码解码解决方案。 Channel ：一个新的原始I/O 抽象。 支持锁和内存映射文件的文件访问接口。 提供多路(non-bloking) 非阻塞式的高伸缩性网络I/O 。<br>2.2.传统socket和socket nio代码<br>见代码<br>2.3.socket nio原理<br>2.3.1.传统的I/O<br>使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:<br>File.read(fileDesc, buf, len);<br>Socket.send(socket, buf, len);<br>会有较大的性能开销, 主要表现在一下两方面:</p>
-<ol>
-<li>上下文切换(context switch), 此处有4次用户态和内核态的切换</li>
-<li>Buffer内存开销, 一个是应用程序buffer, 另一个是系统读取buffer以及socket buffer<br>其运行示意图如下</li>
-</ol>
-<p>1) 先将文件内容从磁盘中拷贝到操作系统buffer<br>2) 再从操作系统buffer拷贝到程序应用buffer<br>3) 从程序buffer拷贝到socket buffer<br>4) 从socket buffer拷贝到协议引擎.<br>2.3.2.NIO<br>NIO技术省去了将操作系统的read buffer拷贝到程序的buffer, 以及从程序buffer拷贝到socket buffer的步骤, 直接将 read buffer 拷贝到 socket buffer. java 的 FileChannel.transferTo() 方法就是这样的实现, 这个实现是依赖于操作系统底层的sendFile()实现的.<br>publicvoid transferTo(long position, long count, WritableByteChannel target);<br>他的底层调用的是系统调用sendFile()方法<br>sendfile(int out_fd, int in_fd, off_t *offset, size_t count);</p>
+        <p>1.Zookeeper概念简介：<br>Zookeeper是一个分布式协调服务；就是为用户的分布式应用程序提供协调服务<br>A、zookeeper是为别的分布式程序服务的<br>B、Zookeeper本身就是一个分布式程序（只要有半数以上节点存活，zk就能正常服务）<br>C、Zookeeper所提供的服务涵盖：主从协调、服务器节点动态上下线、统一配置管理、分布式共享锁、统一名称服务……<br>D、虽然说可以提供各种服务，但是zookeeper在底层其实只提供了两个功能：<br>管理(存储，读取)用户程序提交的数据；<br>并为用户程序提供数据节点监听服务；</p>
+<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522632943765&amp;di=2df2daf925c7c35d3a6eb183a70c3318&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.kuqin.com%2Fupimg%2Fallimg%2F150729%2F0000146334-0.jpg" alt=""></p>
+<p>Zookeeper集群的角色：  Leader 和  follower  （Observer）<br>只要集群中有半数以上节点存活，集群就能提供服务</p>
+<p>2.zookeeper集群机制<br>半数机制：集群中半数以上机器存活，集群可用。<br>zookeeper适合装在奇数台机器上！！！<br>3.安装<br>3.1.安装<br>3.1.1.机器部署<br>安装到3台虚拟机上<br>安装好JDK</p>
         
-          <a class="article-more-a" href="/2016/11/05/nio/#more">more >></a>
+          <a class="article-more-a" href="/2014/12/14/zookeeper/#more">more >></a>
         
       
 
@@ -757,7 +596,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">NIO</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">zookeeper</a>
         		</li>
       		
 		</ul>
@@ -767,7 +606,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/05/nio/">展开全文 >></a>
+          <a class="article-more-a" href="/2014/12/14/zookeeper/">展开全文 >></a>
         </p>
       
 
@@ -797,30 +636,34 @@
 
 
   
-    <article id="post-rpc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-flume" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/05/rpc/">什么是RPC</a>
+      <a class="article-title" href="/2014/12/09/flume/">日志采集系统Flume</a>
     </h1>
   
 
         
-        <a href="/2016/11/05/rpc/" class="archive-article-date">
-  	<time datetime="2016-11-05T05:24:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-05</time>
+        <a href="/2014/12/09/flume/" class="archive-article-date">
+  	<time datetime="2014-12-09T11:40:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-12-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522632592636&amp;di=d80af84c60470f0e0e971516e7036901&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1596400633%2C10942084%26fm%3D214%26gp%3D0.jpg" alt=""></p>
-<p>1.1.什么是RPC<br>    RPC（Remote Procedure Call Protocol）——远程过程调用协议，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。<br>    RPC采用客户机/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息到达为止。当一个调用信息到达，服务器获得进程参数，计算结果，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。</p>
-<p>运行时,一次客户机对服务器的RPC调用,其内部操作大致有如下十步：<br>1.调用客户端句柄；执行传送参数<br>2.调用本地系统内核发送网络消息<br>3.消息传送到远程主机<br>4.服务器句柄得到消息并取得参数<br>5.执行远程过程<br>6.执行的过程将结果返回服务器句柄<br>7.服务器句柄返回结果，调用远程系统内核<br>8.消息传回本地主机<br>9.客户句柄由内核接收消息<br>10.客户接收句柄返回的数据</p>
-
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522631850940&amp;di=c592d925d2353d1d34c64e2f0bcc1e3b&amp;imgtype=0&amp;src=http%3A%2F%2Fstatic.open-open.com%2Flib%2FuploadImg%2F20160120%2F20160120173428_682.png" alt=""></p>
+<p>在一个完整的大数据处理系统中，除了hdfs+mapreduce+hive组成分析系统的核心之外，还需要数据采集、结果数据导出、任务调度等不可或缺的辅助系统，而这些辅助工具在hadoop生态体系中都有便捷的开源框架</p>
+<p>Flume是一个分布式、可靠、和高可用的海量日志采集、聚合和传输的系统。<br>Flume可以采集文件，socket数据包等各种形式源数据，又可以将采集到的数据输出到HDFS、hbase、hive、kafka等众多外部存储系统中<br>一般的采集需求，通过对flume的简单配置即可实现<br>Flume针对特殊场景也具备良好的自定义扩展能力，因此，flume可以适用于大部分的日常数据采集场景</p>
+<p>运行机制<br>1、Flume分布式系统中最核心的角色是agent，flume采集系统就是由一个个agent所连接起来形成<br>2、每一个agent相当于一个数据传递员[Source 到 Channel 到 Sink之间传递数据的形式是Event事件；Event事件是一个数据流单元。</p>
+<p>]，内部有三个组件：<br>a)Source：采集源，用于跟数据源对接，以获取数据<br>b)Sink：下沉地，采集数据的传送目的，用于往下一级agent传递数据或者往最终存储系统传递数据<br>c)Channel：angent内部的数据传输通道，用于从source将数据传递到sink<br>
+        
+          <a class="article-more-a" href="/2014/12/09/flume/#more">more >></a>
+        
       
 
       
@@ -833,7 +676,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RPC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Flume</a>
         		</li>
       		
 		</ul>
@@ -843,7 +686,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/05/rpc/">展开全文 >></a>
+          <a class="article-more-a" href="/2014/12/09/flume/">展开全文 >></a>
         </p>
       
 
@@ -880,13 +723,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/05/hbase/">Hbase安装部署</a>
+      <a class="article-title" href="/2014/12/05/hbase/">Hbase安装部署</a>
     </h1>
   
 
         
-        <a href="/2016/11/05/hbase/" class="archive-article-date">
-  	<time datetime="2016-11-05T05:24:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-05</time>
+        <a href="/2014/12/05/hbase/" class="archive-article-date">
+  	<time datetime="2014-12-05T05:24:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-12-05</time>
 </a>
         
       </header>
@@ -903,7 +746,7 @@
 <p>添加内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">export</span> HBASE_HOME=/home/hadoop/hbase</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$HBASE_HOME</span>/bin</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2016/11/05/hbase/#more">more >></a>
+          <a class="article-more-a" href="/2014/12/05/hbase/#more">more >></a>
         
       
 
@@ -927,7 +770,166 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/05/hbase/">展开全文 >></a>
+          <a class="article-more-a" href="/2014/12/05/hbase/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ha" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/22/ha/">HA高可用</a>
+    </h1>
+  
+
+        
+        <a href="/2014/11/22/ha/" class="archive-article-date">
+  	<time datetime="2014-11-22T03:56:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522631775932&amp;di=89bc40c9f21f985f6a05463e33b52295&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D3584593091%2C2621700634%26fm%3D214%26gp%3D0.jpg" alt=""></p>
+<h2 id="正式引入HA机制是从hadoop2-0开始，之前的版本中没有HA机制"><a href="#正式引入HA机制是从hadoop2-0开始，之前的版本中没有HA机制" class="headerlink" title="正式引入HA机制是从hadoop2.0开始，之前的版本中没有HA机制"></a>正式引入HA机制是从hadoop2.0开始，之前的版本中没有HA机制</h2><h2 id="HA的运作机制"><a href="#HA的运作机制" class="headerlink" title="HA的运作机制"></a>HA的运作机制</h2><p>（1）hadoop-HA集群运作机制介绍<br>所谓HA，即高可用（7*24小时不中断服务）<br>实现高可用最关键的是消除单点故障<br>hadoop-ha严格来说应该分成各个组件的HA机制——HDFS的HA、YARN的HA</p>
+<p>（2）HDFS的HA机制详解<br>通过双namenode消除单点故障<br>双namenode协调工作的要点：<br>    A、元数据管理方式需要改变：<br>    内存中各自保存一份元数据<br>    Edits日志只能有一份，只有Active状态的namenode节点可以做写操作<br>    两个namenode都可以读取edits<br>    共享的edits放在一个共享存储中管理（qjournal和NFS两个主流实现）<br>    B、需要一个状态管理功能模块<br>    实现了一个zkfailover，常驻在每一个namenode所在的节点<br>    每一个zkfailover负责监控自己所在namenode节点，利用zk进行状态标识<br>    当需要进行状态切换时，由zkfailover来负责切换<br>    切换时需要防止brain split现象的发生</p>
+        
+          <a class="article-more-a" href="/2014/11/22/ha/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2014/11/22/ha/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hadoop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/10/hadoop/">分布式计算系统hadoop</a>
+    </h1>
+  
+
+        
+        <a href="/2014/11/10/hadoop/" class="archive-article-date">
+  	<time datetime="2014-11-10T09:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-11-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522631635543&amp;di=113281719893005c6e6b2c81c46e5f6b&amp;imgtype=0&amp;src=http%3A%2F%2Fstatic.oschina.net%2Fuploads%2Fimg%2F201402%2F15184654_GUnO.png" alt=""></p>
+<p>1.1 什么是HADOOP<br>1.HADOOP是apache旗下的一套开源软件平台<br>2.HADOOP提供的功能：利用服务器集群，根据用户的自定义业务逻辑，对海量数据进行分布式处理<br>3.HADOOP的核心组件有<br>A.HDFS（分布式文件系统）<br>B.YARN（运算资源调度系统）<br>C.MAPREDUCE（分布式运算编程框架）<br>4.广义上来说，HADOOP通常是指一个更广泛的概念——HADOOP生态圈<br>1.2 HADOOP产生背景<br>1.HADOOP最早起源于Nutch。Nutch的设计目标是构建一个大型的全网搜索引擎，包括网页抓取、索引、查询等功能，但随着抓取网页数量的增加，遇到了严重的可扩展性问题——如何解决数十亿网页的存储和索引问题。<br>2.2003年、2004年谷歌发表的两篇论文为该问题提供了可行的解决方案。<br>——分布式文件系统（GFS），可用于处理海量网页的存储<br>——分布式计算框架MAPREDUCE，可用于处理海量网页的索引计算问题。<br>3.Nutch的开发人员完成了相应的开源实现HDFS和MAPREDUCE，并从Nutch中剥离成为独立项目HADOOP，到2008年1月，HADOOP成为Apache顶级项目，迎来了它的快速发展期。<br>1.3 HADOOP在大数据、云计算中的位置和关系<br>1.云计算是分布式计算、并行计算、网格计算、多核计算、网络存储、虚拟化、负载均衡等传统计算机技术和互联网技术融合发展的产物。借助IaaS(基础设施即服务)、PaaS(平台即服务)、SaaS（软件即服务）等业务模式，把强大的计算能力提供给终端用户。</p>
+<p>2.现阶段，云计算的两大底层支撑技术为“虚拟化”和“大数据技术”</p>
+<p>3.而HADOOP则是云计算的PaaS层的解决方案之一，并不等同于PaaS，更不等同于云计算本身。</p>
+<h3 id="重点组件："><a href="#重点组件：" class="headerlink" title="重点组件："></a>重点组件：</h3><p>HDFS：分布式文件系统<br>MAPREDUCE：分布式运算程序开发框架<br>HIVE：基于大数据技术（文件系统+运算框架）的SQL数据仓库工具<br>HBASE：基于HADOOP的分布式海量数据库<br>ZOOKEEPER：分布式协调服务基础组件<br>Mahout：基于mapreduce/spark/flink等分布式运算框架的机器学习算法库<br>Oozie：工作流调度框架<br>Sqoop：数据导入导出工具<br>Flume：日志数据采集框架</p>
+<h3 id="数据处理流程"><a href="#数据处理流程" class="headerlink" title="数据处理流程"></a>数据处理流程</h3><p>1)数据采集：定制开发采集程序，或使用开源框架FLUME<br>2)数据预处理：定制开发mapreduce程序运行于hadoop集群<br>3)数据仓库技术：基于hadoop之上的Hive<br>4)数据导出：基于hadoop的sqoop数据导入导出工具<br>5)数据可视化：定制开发web程序或使用kettle等产品<br>6)整个过程的流程调度：hadoop生态圈中的oozie工具或其他类似开源产品</p>
+        
+          <a class="article-more-a" href="/2014/11/10/hadoop/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hadoop</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2014/11/10/hadoop/">展开全文 >></a>
         </p>
       
 
@@ -1050,6 +1052,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">azkaban</a>
               </li>
              
@@ -1058,15 +1064,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">HA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Flume</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">HA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1075,6 +1077,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">药别停</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1090,11 +1100,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">旧事</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">药别停</a>
+                <a href="javascript:void(0)" class="js-tag color1">keepalived</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1102,7 +1108,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">keepalived</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1122,11 +1128,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SparkRDD</a>
+                <a href="javascript:void(0)" class="js-tag color4">Sed</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spark</a>
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1134,7 +1140,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SparkRDD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Sparkstreaming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spark</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1142,7 +1156,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1150,11 +1164,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
             
             <div class="clearfix"></div>
