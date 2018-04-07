@@ -151,6 +151,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-nio" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/07/05/nio/">什么是nio&amp;netty</a>
+    </h1>
+  
+
+        
+        <a href="/2014/07/05/nio/" class="archive-article-date">
+  	<time datetime="2014-07-05T05:24:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522632453224&amp;di=42868b4fe31c98e4ff971d4b278a105a&amp;imgtype=0&amp;src=http%3A%2F%2Fimg2.shangxueba.com%2Fimg%2Fkaifa%2F20140904%2F12%2FBB4008BD06906F6FA78DA1624B4F8303.png" alt=""></p>
+<p>2.1.简介<br>    nio 是New IO 的简称，在jdk1.4 里提供的新api 。Sun 官方标榜的特性如下： 为所有的原始类型提供(Buffer)缓存支持。字符集编码解码解决方案。 Channel ：一个新的原始I/O 抽象。 支持锁和内存映射文件的文件访问接口。 提供多路(non-bloking) 非阻塞式的高伸缩性网络I/O 。<br>2.2.传统socket和socket nio代码<br>见代码<br>2.3.socket nio原理<br>2.3.1.传统的I/O<br>使用传统的I/O程序读取文件内容, 并写入到另一个文件(或Socket), 如下程序:<br>File.read(fileDesc, buf, len);<br>Socket.send(socket, buf, len);<br>会有较大的性能开销, 主要表现在一下两方面:</p>
+<ol>
+<li>上下文切换(context switch), 此处有4次用户态和内核态的切换</li>
+<li>Buffer内存开销, 一个是应用程序buffer, 另一个是系统读取buffer以及socket buffer<br>其运行示意图如下</li>
+</ol>
+<p>1) 先将文件内容从磁盘中拷贝到操作系统buffer<br>2) 再从操作系统buffer拷贝到程序应用buffer<br>3) 从程序buffer拷贝到socket buffer<br>4) 从socket buffer拷贝到协议引擎.<br>2.3.2.NIO<br>NIO技术省去了将操作系统的read buffer拷贝到程序的buffer, 以及从程序buffer拷贝到socket buffer的步骤, 直接将 read buffer 拷贝到 socket buffer. java 的 FileChannel.transferTo() 方法就是这样的实现, 这个实现是依赖于操作系统底层的sendFile()实现的.<br>publicvoid transferTo(long position, long count, WritableByteChannel target);<br>他的底层调用的是系统调用sendFile()方法<br>sendfile(int out_fd, int in_fd, off_t *offset, size_t count);</p>
+        
+          <a class="article-more-a" href="/2014/07/05/nio/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">NIO</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2014/07/05/nio/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-learnlinux2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -419,11 +501,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -435,15 +517,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iptables</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hive</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Kafka</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,7 +525,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kafka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">keepalived</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iptables</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,10 +553,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Sed</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">NIO</a>
               </li>
              
@@ -483,11 +561,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SparkRDD</a>
+                <a href="javascript:void(0)" class="js-tag color4">Sed</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SparkSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据倾斜</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SparkRDD</a>
               </li>
              
               <li class="article-tag-list-item">
