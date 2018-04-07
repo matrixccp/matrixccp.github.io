@@ -151,6 +151,181 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-es" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/07/es/">内存数据库Redis</a>
+    </h1>
+  
+
+        
+        <a href="/2015/05/07/es/" class="archive-article-date">
+  	<time datetime="2015-05-07T03:05:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-05-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><p>Redis是目前一个非常优秀的key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set有序集合)和hash（哈希类型）</p>
+<p><img src="http://image.bubuko.com/info/201803/20180325224942110130.png" alt=""></p>
+<p>Redis 优势和优点<br>（1）性能极高 – Redis能读的速度是110000次/s,写的速度是81000次/s 。</p>
+<p>（2）丰富的数据类型 – Redis支持二进制案例的 Strings, Lists, Hashes, Sets 及 Ordered Sets 数据类型操作。</p>
+<p>（3）原子 – Redis的所有操作都是原子性的，同时Redis还支持对几个操作全并后的原子性执行。</p>
+<p>（4）丰富的特性 – Redis还支持 publish/subscribe（发布/订阅）, 通知, key 过期等等特性。</p>
+<p>Redis 与其他 key - value 缓存产品有以下三个特点：<br>（1）Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。</p>
+<p>（2）Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。</p>
+<p>（3）Redis支持数据的备份，即master-slave模式的数据备份。</p>
+<p>Redis和Memcached的其他区别如下：</p>
+<p>1、Redis和Memcached都是将数据存放在内存中，都是内存数据库。不过Memcached还可用于缓存其他东西，例如图片、视频等等；</p>
+<p>2、Redis不仅仅支持简单的K/V类型的数据，同时还提供List，Set，Hash等数据结构的存储；</p>
+<p>3、虚拟内存–Redis当物理内存用完时，可以将一些很久没用到的Value 交换到磁盘；</p>
+<p>4、过期策略–Memcached在set时就指定，例如:set key1 0 0 8,即永不过期。Redis可以通过例如expire 设定，例如:expire name 10；</p>
+<p>5、分布式–设定Memcached集群，利用magent做一主多从;Redis可以做一主多从。都可以一主一从；</p>
+<p>6、存储数据安全–Memcached挂掉后，数据没了；Redis可以定期保存到磁盘（持久化）；</p>
+<p>7、灾难恢复–Memcached挂掉后，数据不可恢复; Redis数据丢失后可以通过AOF恢复；</p>
+<p>8、Redis支持数据的备份，即Master-Slave模式的数据备份；</p>
+<p>9、应用场景不一样：Redis出来作为NoSQL数据库使用外，还能用做消息队列、数据堆栈和数据缓存等；Memcached适合于缓存SQL语句、数据集、用户临时性数据、延迟查询数据和Session等。</p>
+        
+          <a class="article-more-a" href="/2015/05/07/es/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/05/07/es/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-storm-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/16/storm-1/">强大的Spark</a>
+    </h1>
+  
+
+        
+        <a href="/2015/04/16/storm-1/" class="archive-article-date">
+  	<time datetime="2015-04-16T07:43:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522632738229&amp;di=4dde0bb268fbccade37b8d6e30831a51&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.raincent.com%2Fuploadfile%2F2017%2F0421%2F20170421025515681.jpg" alt=""></p>
+<p>Spark是一种快速、通用、可扩展的大数据分析引擎，2009年诞生于加州大学伯克利分校AMPLab，2010年开源，2013年6月成为Apache孵化项目，2014年2月成为Apache顶级项目。目前，Spark生态系统已经发展成为一个包含多个子项目的集合，其中包含SparkSQL、Spark Streaming、GraphX、MLlib等子项目，Spark是基于内存计算的大数据并行计算框架。Spark基于内存计算，提高了在大数据环境下数据处理的实时性，同时保证了高容错性和高可伸缩性，允许用户将Spark部署在大量廉价硬件之上，形成集群。Spark得到了众多大数据公司的支持，这些公司包括Hortonworks、IBM、Intel、Cloudera、MapR、Pivotal、百度、阿里、腾讯、京东、携程、优酷土豆。当前百度的Spark已应用于凤巢、大搜索、直达号、百度大数据等业务；阿里利用GraphX构建了大规模的图计算和图挖掘系统，实现了很多生产系统的推荐算法；腾讯Spark集群达到8000台的规模，是当前已知的世界上最大的Spark集群。</p>
+<h3 id="什么是Spark？"><a href="#什么是Spark？" class="headerlink" title="什么是Spark？"></a>什么是Spark？</h3><p>中间结果输出：基于MapReduce的计算引擎通常会将中间结果输出到磁盘上，进行存储和容错。出于任务管道承接的，考虑，当一些查询翻译到MapReduce任务时，往往会产生多个Stage，而这些串联的Stage又依赖于底层文件系统（如HDFS）来存储每一个Stage的输出结果</p>
+<p>Spark是MapReduce的替代方案，而且兼容HDFS、Hive，可融入Hadoop的生态系统，以弥补MapReduce的不足。</p>
+<h3 id="快"><a href="#快" class="headerlink" title="快"></a>快</h3><p>官方称spark与Hadoop的MapReduce相比，Spark基于内存的运算要快100倍以上，基于硬盘的运算也要快10倍以上。Spark实现了高效的DAG执行引擎，可以通过基于内存来高效处理数据流。</p>
+<h3 id="易用"><a href="#易用" class="headerlink" title="易用"></a>易用</h3><p>Spark支持Java、Python和Scala的API，还支持超过80种高级算法，使用户可以快速构建不同的应用。而且Spark支持交互式的Python和Scala的shell，可以非常方便地在这些shell中使用Spark集群来验证解决问题的方法。</p>
+        
+          <a class="article-more-a" href="/2015/04/16/storm-1/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spark</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/04/16/storm-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hive" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -793,168 +968,6 @@
 
 
   
-    <article id="post-hbase" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/05/hbase/">Hbase安装部署</a>
-    </h1>
-  
-
-        
-        <a href="/2014/12/05/hbase/" class="archive-article-date">
-  	<time datetime="2014-12-05T05:24:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-12-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522631588818&amp;di=7d74531fa7ced0d339337a3a57d1f66f&amp;imgtype=0&amp;src=http%3A%2F%2F7xnrdo.com1.z0.glb.clouddn.com%2F2013%2Fhbase-structure.jpg" alt=""></p>
-<p>1.上传<br>首先确保用户是hadoop，用工具将hbase安装包hbase-0.99.2-bin.tar.gz上传到/home/hadoop下，确保hbase-0.99.2-bin.tar.gz的用户是hadoop，如果不是，执行chown命令，见上文<br>2.解压</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su – hadoop</span><br><span class="line">tar –zxvf  hbase-0.99.2-bin.tar.gz</span><br></pre></td></tr></table></figure>
-<p>3.重命名</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv hbase-0.99.2 hbase</span><br></pre></td></tr></table></figure>
-<p>4.修改环境变量<br>1、在master机器上执行下面命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su – root</span><br><span class="line">vi/etc/profile</span><br></pre></td></tr></table></figure>
-<p>添加内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">export</span> HBASE_HOME=/home/hadoop/hbase</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$HBASE_HOME</span>/bin</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2014/12/05/hbase/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">hbase</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2014/12/05/hbase/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ha" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/22/ha/">HA高可用</a>
-    </h1>
-  
-
-        
-        <a href="/2014/11/22/ha/" class="archive-article-date">
-  	<time datetime="2014-11-22T03:56:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-11-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522631775932&amp;di=89bc40c9f21f985f6a05463e33b52295&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D3584593091%2C2621700634%26fm%3D214%26gp%3D0.jpg" alt=""></p>
-<h2 id="正式引入HA机制是从hadoop2-0开始，之前的版本中没有HA机制"><a href="#正式引入HA机制是从hadoop2-0开始，之前的版本中没有HA机制" class="headerlink" title="正式引入HA机制是从hadoop2.0开始，之前的版本中没有HA机制"></a>正式引入HA机制是从hadoop2.0开始，之前的版本中没有HA机制</h2><h2 id="HA的运作机制"><a href="#HA的运作机制" class="headerlink" title="HA的运作机制"></a>HA的运作机制</h2><p>（1）hadoop-HA集群运作机制介绍<br>所谓HA，即高可用（7*24小时不中断服务）<br>实现高可用最关键的是消除单点故障<br>hadoop-ha严格来说应该分成各个组件的HA机制——HDFS的HA、YARN的HA</p>
-<p>（2）HDFS的HA机制详解<br>通过双namenode消除单点故障<br>双namenode协调工作的要点：<br>    A、元数据管理方式需要改变：<br>    内存中各自保存一份元数据<br>    Edits日志只能有一份，只有Active状态的namenode节点可以做写操作<br>    两个namenode都可以读取edits<br>    共享的edits放在一个共享存储中管理（qjournal和NFS两个主流实现）<br>    B、需要一个状态管理功能模块<br>    实现了一个zkfailover，常驻在每一个namenode所在的节点<br>    每一个zkfailover负责监控自己所在namenode节点，利用zk进行状态标识<br>    当需要进行状态切换时，由zkfailover来负责切换<br>    切换时需要防止brain split现象的发生</p>
-        
-          <a class="article-more-a" href="/2014/11/22/ha/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2014/11/22/ha/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1044,23 +1057,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Flink</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Awk</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">HA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Flume</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1068,7 +1069,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Awk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Flume</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">HA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1076,7 +1089,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iptables</a>
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1088,11 +1101,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iptables</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Kafka</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hive</a>
+                <a href="javascript:void(0)" class="js-tag color1">keepalived</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1104,10 +1125,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">keepalived</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Mahout</a>
               </li>
              
@@ -1116,11 +1133,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RPC</a>
+                <a href="javascript:void(0)" class="js-tag color4">NIO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NIO</a>
+                <a href="javascript:void(0)" class="js-tag color4">RPC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1132,11 +1149,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据倾斜</a>
+                <a href="javascript:void(0)" class="js-tag color4">SparkRDD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SparkRDD</a>
+                <a href="javascript:void(0)" class="js-tag color5">Sparkstreaming</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1144,7 +1161,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sparkstreaming</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据倾斜</a>
               </li>
              
               <li class="article-tag-list-item">
